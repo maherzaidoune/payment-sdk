@@ -1,3 +1,8 @@
 module.exports = {
-  presets: ['module:react-native-builder-bob/babel-preset'],
+  presets: ['@react-native/babel-preset'],
+  env: {
+    test: {
+      plugins: ['@babel/plugin-transform-runtime'],
+    },
+  },
 };
