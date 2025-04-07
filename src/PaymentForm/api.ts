@@ -2,9 +2,6 @@ import type { CardDetails, TokenApiResponse } from './types';
 
 const API_URL = 'https://api.sandbox.checkout.com/tokens';
 
-//is api key correct?
-const API_KEY = '';
-
 interface TokenRequest {
   type: 'card';
   number: string;
@@ -14,7 +11,8 @@ interface TokenRequest {
 }
 
 export const createToken = async (
-  cardDetails: CardDetails
+  cardDetails: CardDetails,
+  apiKey: string
 ): Promise<TokenApiResponse> => {
   try {
     // Parse expiry date MM/YY
@@ -35,7 +33,7 @@ export const createToken = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
+        'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify(tokenRequest),
     });

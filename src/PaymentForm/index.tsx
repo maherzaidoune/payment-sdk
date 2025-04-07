@@ -37,6 +37,7 @@ export interface PaymentFormHandle {
 const PaymentForm = forwardRef<PaymentFormHandle, PaymentFormProps>(
   (props, ref) => {
     const {
+      apiKey,
       onCardDetailsChange,
       onSubmit,
       onError,
@@ -124,7 +125,7 @@ const PaymentForm = forwardRef<PaymentFormHandle, PaymentFormProps>(
         }
 
         try {
-          const tokenResponse = await createToken(cardDetails);
+          const tokenResponse = await createToken(cardDetails, apiKey);
           onSubmit?.(tokenResponse);
           onPaymentCompleted?.(tokenResponse);
           return tokenResponse;
@@ -132,7 +133,7 @@ const PaymentForm = forwardRef<PaymentFormHandle, PaymentFormProps>(
           onError?.(error);
           throw error;
         }
-      }, [cardDetails, onSubmit, onPaymentCompleted, onError]);
+      }, [cardDetails, apiKey, onSubmit, onPaymentCompleted, onError]);
 
     const getPublicInterface: () => PaymentFormHandle = useCallback(
       () => ({

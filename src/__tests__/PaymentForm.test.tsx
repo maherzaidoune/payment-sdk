@@ -15,6 +15,7 @@ describe('PaymentForm Component', () => {
   it('renders correctly with default props', () => {
     const { getByText, getByTestId } = render(
       <PaymentForm
+        apiKey="pk_sbox_...="
         onCardDetailsChange={mockOnCardDetailsChange}
         onSubmit={mockOnSubmit}
         onError={mockOnError}
@@ -33,6 +34,7 @@ describe('PaymentForm Component', () => {
     it('does not validate on change', () => {
       const { getByTestId, queryByText } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
           onError={mockOnError}
@@ -49,6 +51,7 @@ describe('PaymentForm Component', () => {
     it('validates card number on blur', () => {
       const { getByTestId, queryByText } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
           onError={mockOnError}
@@ -79,6 +82,7 @@ describe('PaymentForm Component', () => {
     it('validates expiry date on blur', () => {
       const { getByTestId, queryByText } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
           onError={mockOnError}
@@ -101,6 +105,7 @@ describe('PaymentForm Component', () => {
     it('validates CVV on blur', () => {
       const { getByTestId, queryByText } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
           onError={mockOnError}
@@ -124,6 +129,7 @@ describe('PaymentForm Component', () => {
       const formRef = createRef<PaymentFormHandle>();
       const { queryByText } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           ref={formRef}
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
@@ -146,6 +152,7 @@ describe('PaymentForm Component', () => {
       const formRef = createRef<PaymentFormHandle>();
       const { getByTestId } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           ref={formRef}
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
@@ -174,6 +181,7 @@ describe('PaymentForm Component', () => {
       const formRef = createRef<PaymentFormHandle>();
       const { getByTestId } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           ref={formRef}
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
@@ -217,6 +225,7 @@ describe('PaymentForm Component', () => {
 
       const { getByText, getByTestId, queryByText } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
           onError={mockOnError}
@@ -248,6 +257,7 @@ describe('PaymentForm Component', () => {
 
       const { getByTestId } = render(
         <PaymentForm
+          apiKey="pk_sbox_...="
           onCardDetailsChange={mockOnCardDetailsChange}
           onSubmit={mockOnSubmit}
           onError={mockOnError}

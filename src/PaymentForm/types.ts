@@ -45,6 +45,7 @@ export interface Translations {
 }
 
 export interface PaymentFormProps {
+  apiKey: string;
   onCardDetailsChange?: (details: CardDetails, isValid: boolean) => void;
   onSubmit?: (tokenResponse: TokenApiResponse) => void;
   onError?: (error: any) => void;

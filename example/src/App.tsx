@@ -85,6 +85,7 @@ export default function App() {
               onPaymentCompleted={(payment) => {
                 console.log('Payment completed:', payment);
               }}
+              apiKey="pk_sbox_...="
               translations={{
                 cvvLabel: '!NOT_CVV',
               }}
